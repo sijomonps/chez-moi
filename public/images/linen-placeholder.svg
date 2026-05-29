@@ -1,0 +1,13 @@
+<svg width="1200" height="1600" viewBox="0 0 1200 1600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="1600" fill="#EDE7DA"/>
+  <rect x="80" y="80" width="1040" height="1440" stroke="#D4AF37" stroke-width="2"/>
+  <text x="50%" y="50%" fill="#1F2A44" font-family="Manrope, Arial, sans-serif" font-size="48" letter-spacing="8" text-anchor="middle">
+    CHEZ MOI
+  </text>
+  <text x="50%" y="55%" fill="#1F2A44" font-family="Manrope, Arial, sans-serif" font-size="20" letter-spacing="6" text-anchor="middle">
+    MY PLACE
+  </text>
+  <text x="50%" y="62%" fill="#1F2A44" font-family="Manrope, Arial, sans-serif" font-size="14" letter-spacing="4" text-anchor="middle">
+    REPLACE WITH PHOTOGRAPHY
+  </text>
+</svg>
