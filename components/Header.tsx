@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
@@ -13,6 +14,9 @@ const navLinks = [
 
 export default function Header() {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+
+  const isActive = (href: string) => pathname === href;
 
   return (
     <header className="sticky top-0 z-50">
@@ -35,7 +39,11 @@ export default function Header() {
               {navLinks.map((link) => (
                 <li key={link.label}>
                   <Link
-                    className="transition-colors hover:text-foreground/70"
+                    className={
+                      isActive(link.href)
+                        ? "rounded-full bg-white px-4 py-2 font-semibold text-[#1F2A44] transition-colors"
+                        : "transition-colors hover:text-foreground/70"
+                    }
                     href={link.href}
                   >
                     {link.label}
@@ -91,7 +99,11 @@ export default function Header() {
                   {navLinks.map((link) => (
                     <li key={link.label}>
                       <Link
-                        className="transition-colors hover:text-foreground/70"
+                        className={
+                          isActive(link.href)
+                            ? "inline-flex rounded-full bg-white px-4 py-2 font-semibold text-[#1F2A44] transition-colors"
+                            : "transition-colors hover:text-foreground/70"
+                        }
                         href={link.href}
                         onClick={() => setOpen(false)}
                       >

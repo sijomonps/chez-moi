@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
-import { Camera, MessageCircle } from "lucide-react";
+import { MessageCircle } from "lucide-react";
 
 export default function Contact() {
   const reduceMotion = useReducedMotion();
@@ -21,17 +21,10 @@ export default function Contact() {
           <div className="mt-8 flex flex-wrap items-center gap-4">
             <a
               href="https://wa.me/0000000000"
-              className="inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3 text-[11px] font-medium uppercase tracking-[0.3em] text-background transition-colors hover:bg-foreground/90"
+              className="inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3 text-[11px] font-medium uppercase tracking-[0.3em] !text-[#faf8f2] transition-colors hover:bg-foreground/90"
             >
               <MessageCircle size={16} aria-hidden="true" />
               WhatsApp
-            </a>
-            <a
-              href="https://instagram.com/chezmoi"
-              className="inline-flex items-center gap-2 rounded-full border border-foreground/15 px-6 py-3 text-[11px] font-medium uppercase tracking-[0.3em] text-foreground transition-colors hover:border-foreground/40"
-            >
-              <Camera size={16} aria-hidden="true" />
-              Instagram
             </a>
           </div>
           <p className="mt-6 text-xs font-medium uppercase tracking-[0.35em] text-foreground/70">

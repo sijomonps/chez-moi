@@ -10,7 +10,7 @@ export default function Hero() {
   const reduceMotion = useReducedMotion();
 
   return (
-    <section className="min-h-[100svh] pb-20 pt-24">
+    <section className="min-h-[70svh] md:min-h-[100svh] pb-20 pt-24">
       <div className="mx-auto grid max-w-6xl gap-12 px-6 md:grid-cols-[1.1fr_1.2fr] md:items-center">
         <motion.div
           initial={{ opacity: 0, y: reduceMotion ? 0 : 18 }}
@@ -34,13 +34,13 @@ export default function Hero() {
           <div className="mt-10 flex flex-wrap items-center gap-4">
             <Link
               href="/collection"
-              className="rounded-full bg-foreground px-6 py-3 text-[11px] font-medium uppercase tracking-[0.3em] text-background transition-colors hover:bg-foreground/90"
+              className="rounded-full bg-foreground px-6 py-3 text-[11px] font-medium uppercase tracking-[0.3em] text-white transition duration-200 hover:brightness-110"
             >
               View Collection
             </Link>
             <a
               href="https://wa.me/0000000000"
-              className="rounded-full border border-foreground/15 px-6 py-3 text-[11px] font-medium uppercase tracking-[0.3em] text-foreground transition-colors hover:border-foreground/40"
+              className="rounded-full border border-foreground/15 px-6 py-3 text-[11px] font-medium uppercase tracking-[0.3em] !text-foreground transition-colors hover:border-foreground/40 hover:text-foreground"
             >
               WhatsApp
             </a>
@@ -51,7 +51,7 @@ export default function Hero() {
           initial={{ opacity: 0, scale: reduceMotion ? 1 : 1.04 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="relative h-[60vh] w-full overflow-hidden rounded-3xl md:h-[80vh]"
+          className="hidden md:block relative h-[60vh] w-full overflow-hidden rounded-3xl md:h-[80vh]"
         >
           <Image
             src={heroImage}

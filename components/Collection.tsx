@@ -1,20 +1,15 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
+import { getOrderLink, products } from "@/lib/products";
 
 type CollectionProps = {
   title?: string;
   intro?: string;
   showHeading?: boolean;
 };
-
-const items = [
-  { name: "Bedsheets", image: "/images/linen-placeholder.svg" },
-  { name: "Curtains", image: "/images/linen-placeholder.svg" },
-  { name: "Towels", image: "/images/linen-placeholder.svg" },
-  { name: "Kitchen Linen", image: "/images/linen-placeholder.svg" },
-];
 
 export default function Collection({
   title = "Collection",
@@ -45,7 +40,7 @@ export default function Collection({
         )}
 
         <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-          {items.map((item) => (
+          {products.map((item) => (
             <motion.div
               key={item.name}
               initial={{ opacity: 0, y: reduceMotion ? 0 : 14 }}
@@ -66,6 +61,23 @@ export default function Collection({
               <h3 className="mt-4 text-sm font-medium uppercase tracking-[0.3em] text-foreground">
                 {item.name}
               </h3>
+              <p className="mt-2 text-sm text-foreground/70">
+                {item.summary}
+              </p>
+              <div className="mt-4 flex flex-wrap items-center gap-3">
+                <Link
+                  href={`/products/${item.slug}`}
+                  className="rounded-full border border-foreground/20 px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.28em] text-foreground transition-colors hover:border-foreground/50"
+                >
+                  View more
+                </Link>
+                <a
+                  href={getOrderLink(item.name)}
+                  className="rounded-full bg-foreground px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.28em] !text-[#faf8f2] transition-colors hover:bg-foreground/90"
+                >
+                  Order now
+                </a>
+              </div>
             </motion.div>
           ))}
         </div>

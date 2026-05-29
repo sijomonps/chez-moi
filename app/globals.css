@@ -30,3 +30,7 @@ a {
   background: var(--accent);
   color: var(--foreground);
 }
+
+.bg-foreground {
+  color: #faf8f2;
+}
