@@ -69,7 +69,7 @@ export default function Collection({
                   href={`/products/${item.slug}`}
                   className="rounded-full border border-foreground/20 px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.28em] text-foreground transition-colors hover:border-foreground/50"
                 >
-                  View more
+                  View
                 </Link>
                 <a
                   href={getOrderLink(item.name)}

@@ -34,3 +34,7 @@ a {
 .bg-foreground {
   color: #faf8f2;
 }
+
+#home, #collection, #about, #gallery, #contact {
+  scroll-margin-top: 100px;
+}

@@ -10,6 +10,7 @@ const navLinks = [
   { label: "Home", href: "/#home", id: "home" },
   { label: "Collection", href: "/#collection", id: "collection" },
   { label: "About", href: "/#about", id: "about" },
+  { label: "Gallery", href: "/#gallery", id: "gallery" },
 ];
 
 export default function Header() {
@@ -26,10 +27,10 @@ export default function Header() {
     // Only track scroll/observer when we are on the homepage
     if (pathname !== "/") return;
 
-    const sections = ["home", "collection", "about"];
+    const sections = ["home", "collection", "about", "gallery"];
     const observerOptions = {
       root: null,
-      rootMargin: "-30% 0px -40% 0px", // Trigger when the section occupies the center of the viewport
+      rootMargin: "-20% 0px -50% 0px", // Trigger when the section occupies the center of the viewport
       threshold: 0,
     };
 
@@ -48,18 +49,26 @@ export default function Header() {
       if (element) observer.observe(element);
     });
 
+    const handleScroll = () => {
+      if (window.scrollY < 80) {
+        setActiveSection("home");
+      }
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
     return () => {
       sections.forEach((id) => {
         const element = document.getElementById(id);
         if (element) observer.unobserve(element);
       });
+      window.removeEventListener("scroll", handleScroll);
     };
   }, [pathname]);
 
   return (
     <header className="sticky top-0 z-50">
       {/* Background glassmorphism backdrop */}
-      <div className="absolute inset-0 bg-background/80 backdrop-blur-md border-b border-foreground/5 pointer-events-none" />
+      <div className="absolute inset-0 bg-background/80 backdrop-blur-md pointer-events-none" />
       
       <div className="relative mx-auto w-full max-w-6xl px-6 pt-4 pb-3">
         <div className="hidden md:grid grid-cols-[1.2fr_auto_1fr] items-center gap-4">
@@ -114,7 +123,7 @@ export default function Header() {
         {/* Mobile View Header */}
         <div className="flex items-center justify-between md:hidden relative z-10">
           <Link href="/" className="flex items-center text-foreground group">
-            <div className="relative h-14 w-44 overflow-hidden flex items-center">
+            <div className="relative h-18 w-56 overflow-hidden flex items-center">
               <img
                 src="/images/white%20bg-main.png"
                 alt="Chez Moi Logo"
