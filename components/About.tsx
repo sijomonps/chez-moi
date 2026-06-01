@@ -14,7 +14,7 @@ export default function About() {
   const reduceMotion = useReducedMotion();
 
   return (
-    <section id="about" className="py-24">
+    <section id="about" className="py-16 md:py-24">
       <div className="mx-auto max-w-6xl px-6">
         <motion.div
           initial={{ opacity: 0, y: reduceMotion ? 0 : 14 }}

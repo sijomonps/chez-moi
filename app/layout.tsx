@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Manrope } from "next/font/google";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import Preloader from "@/components/Preloader";
 import "./globals.css";
 
 const manrope = Manrope({
@@ -25,7 +26,23 @@ export default function RootLayout({
       lang="en"
       className={`${manrope.variable} h-full scroll-smooth antialiased`}
     >
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              try {
+                if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                  document.documentElement.classList.add('dark');
+                } else {
+                  document.documentElement.classList.remove('dark');
+                }
+              } catch (_) {}
+            `,
+          }}
+        />
+      </head>
       <body className="min-h-full bg-background text-foreground font-sans">
+        <Preloader />
         <div className="flex min-h-full flex-col">
           <Header />
           {children}

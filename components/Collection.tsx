@@ -19,7 +19,7 @@ export default function Collection({
   const reduceMotion = useReducedMotion();
 
   return (
-    <section id="collection" className="py-24">
+    <section id="collection" className="py-16 md:py-24">
       <div className="mx-auto max-w-6xl px-6">
         {showHeading && (
           <motion.div
