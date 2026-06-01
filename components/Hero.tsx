@@ -10,8 +10,8 @@ export default function Hero() {
   const reduceMotion = useReducedMotion();
 
   return (
-    <section id="home" className="min-h-[70svh] md:min-h-[100svh] pb-16 pt-20 md:pb-20 md:pt-24">
-      <div className="mx-auto grid max-w-6xl gap-12 px-6 md:grid-cols-[1.1fr_1.2fr] md:items-center">
+    <section id="home" className="min-h-[70svh] md:min-h-[calc(100svh-120px)] pb-16 pt-20 md:py-0 md:flex md:items-center">
+      <div className="mx-auto grid w-full max-w-6xl gap-12 px-6 md:grid-cols-[1.1fr_1.2fr] md:items-center">
         <motion.div
           initial={{ opacity: 0, y: reduceMotion ? 0 : 18 }}
           animate={{ opacity: 1, y: 0 }}
