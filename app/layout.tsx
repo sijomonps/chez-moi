@@ -14,6 +14,9 @@ const manrope = Manrope({
 export const metadata: Metadata = {
   title: "CHEZ MOI | My Place",
   description: "Premium home linens crafted for modern living.",
+  icons: {
+    icon: "/icon.png",
+  },
 };
 
 export default function RootLayout({

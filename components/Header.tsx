@@ -4,19 +4,57 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const navLinks = [
-  { label: "Home", href: "/" },
-  { label: "Collection", href: "/collection" },
-  { label: "About", href: "/about" },
+  { label: "Home", href: "/#home", id: "home" },
+  { label: "Collection", href: "/#collection", id: "collection" },
+  { label: "About", href: "/#about", id: "about" },
 ];
 
 export default function Header() {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
+  const [activeSection, setActiveSection] = useState("home");
 
-  const isActive = (href: string) => pathname === href;
+  const isActive = (linkId: string) => {
+    if (pathname !== "/") return false;
+    return activeSection === linkId;
+  };
+
+  useEffect(() => {
+    // Only track scroll/observer when we are on the homepage
+    if (pathname !== "/") return;
+
+    const sections = ["home", "collection", "about"];
+    const observerOptions = {
+      root: null,
+      rootMargin: "-30% 0px -40% 0px", // Trigger when the section occupies the center of the viewport
+      threshold: 0,
+    };
+
+    const observerCallback = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id);
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+    sections.forEach((id) => {
+      const element = document.getElementById(id);
+      if (element) observer.observe(element);
+    });
+
+    return () => {
+      sections.forEach((id) => {
+        const element = document.getElementById(id);
+        if (element) observer.unobserve(element);
+      });
+    };
+  }, [pathname]);
 
   return (
     <header className="sticky top-0 z-50">
@@ -49,7 +87,7 @@ export default function Header() {
                 <li key={link.label}>
                   <Link
                     className={
-                      isActive(link.href)
+                      isActive(link.id)
                         ? "rounded-full bg-foreground px-4 py-2 font-semibold text-background transition-colors"
                         : "transition-colors hover:text-foreground/70"
                     }
@@ -114,7 +152,7 @@ export default function Header() {
                     <li key={link.label}>
                       <Link
                         className={
-                          isActive(link.href)
+                          isActive(link.id)
                             ? "inline-flex rounded-full bg-foreground px-4 py-2 font-semibold text-background transition-colors"
                             : "transition-colors hover:text-foreground/70"
                         }

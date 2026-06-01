@@ -10,7 +10,7 @@ export default function Hero() {
   const reduceMotion = useReducedMotion();
 
   return (
-    <section className="min-h-[70svh] md:min-h-[100svh] pb-16 pt-20 md:pb-20 md:pt-24">
+    <section id="home" className="min-h-[70svh] md:min-h-[100svh] pb-16 pt-20 md:pb-20 md:pt-24">
       <div className="mx-auto grid max-w-6xl gap-12 px-6 md:grid-cols-[1.1fr_1.2fr] md:items-center">
         <motion.div
           initial={{ opacity: 0, y: reduceMotion ? 0 : 18 }}
