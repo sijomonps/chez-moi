@@ -33,7 +33,7 @@ export default function Hero() {
           </p>
           <div className="mt-10 flex flex-wrap items-center gap-4">
             <Link
-              href="/collection"
+              href="/#collection"
               className="rounded-full bg-foreground px-6 py-3 text-[11px] font-medium uppercase tracking-[0.3em] text-white transition duration-200 hover:brightness-110"
             >
               View Collection

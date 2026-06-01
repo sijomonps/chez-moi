@@ -24,7 +24,7 @@ export default async function ProductPage({
       <section className="pb-16 pt-24">
         <div className="mx-auto max-w-6xl px-6">
           <div className="flex flex-wrap items-center gap-3 text-[11px] font-medium uppercase tracking-[0.4em] text-foreground/70">
-            <Link href="/collection" className="hover:text-foreground">
+            <Link href="/#collection" className="hover:text-foreground">
               Collection
             </Link>
             <span aria-hidden="true">/</span>
@@ -67,7 +67,7 @@ export default async function ProductPage({
                   Order now
                 </a>
                 <Link
-                  href="/collection"
+                  href="/#collection"
                   className="rounded-full border border-foreground/20 px-6 py-3 text-[11px] font-semibold uppercase tracking-[0.3em] text-foreground transition-colors hover:border-foreground/50"
                 >
                   Back to collection

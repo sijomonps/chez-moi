@@ -30,7 +30,7 @@ export default function About() {
             Welcome Home
           </h2>
           <p className="mt-6 text-sm md:text-base leading-relaxed text-foreground/70">
-            Chez Moi means My Home. We craft elegant home linens designed for
+            Chez Moi means My Place. We craft elegant home linens designed for
             comfort, durability, and timeless style. By combining premium natural
             materials with minimalist design, our collections bring quiet luxury
             to your personal sanctuary.

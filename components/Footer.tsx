@@ -31,12 +31,12 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/collection" className="hover:text-[#faf8f2] transition-colors">
+                <Link href="/#collection" className="hover:text-[#faf8f2] transition-colors">
                   Collection
                 </Link>
               </li>
               <li>
-                <Link href="/about" className="hover:text-[#faf8f2] transition-colors">
+                <Link href="/#about" className="hover:text-[#faf8f2] transition-colors">
                   About Us
                 </Link>
               </li>

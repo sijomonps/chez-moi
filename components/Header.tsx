@@ -149,7 +149,7 @@ export default function Header() {
           {open && (
             <motion.div
               id="mobile-nav"
-              className="mt-4 rounded-2xl border border-foreground/10 bg-background/95 backdrop-blur-md px-6 py-5 md:hidden"
+              className="absolute left-6 right-6 top-full mt-2 rounded-2xl border border-foreground/10 bg-background/95 backdrop-blur-md px-6 py-5 md:hidden shadow-lg"
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
