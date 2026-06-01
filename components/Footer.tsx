@@ -7,7 +7,7 @@ export default function Footer() {
         <div className="grid gap-10 md:grid-cols-[1.5fr_1fr_1fr] pb-12 border-b border-[#faf8f2]/5">
           {/* Logo & Description Column */}
           <div className="flex flex-col items-start gap-4">
-            <div className="relative h-12 w-40 overflow-hidden">
+            <div className="relative h-20 w-64 overflow-hidden flex items-center">
               <img
                 src="/images/black%20bg-main.png"
                 alt="Chez Moi Logo"

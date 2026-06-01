@@ -34,7 +34,7 @@ export default function Preloader() {
           }}
           className="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-[#0a0f1d]"
         >
-          <div className="relative flex flex-col items-center max-w-[280px] px-6 text-center">
+          <div className="relative flex flex-col items-center max-w-[400px] px-6 text-center">
             {/* Elegant logo wrapper */}
             <motion.div
               initial={{ opacity: 0, scale: 0.92, y: 15 }}
@@ -47,7 +47,7 @@ export default function Preloader() {
                   ease: [0.16, 1, 0.3, 1] 
                 } 
               }}
-              className="relative h-20 w-52 overflow-hidden"
+              className="relative h-28 w-72 overflow-hidden"
             >
               <img
                 src="/images/black%20bg-main.png"

@@ -26,21 +26,6 @@ export default function RootLayout({
       lang="en"
       className={`${manrope.variable} h-full scroll-smooth antialiased`}
     >
-      <head>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              try {
-                if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-                  document.documentElement.classList.add('dark');
-                } else {
-                  document.documentElement.classList.remove('dark');
-                }
-              } catch (_) {}
-            `,
-          }}
-        />
-      </head>
       <body className="min-h-full bg-background text-foreground font-sans">
         <Preloader />
         <div className="flex min-h-full flex-col">
