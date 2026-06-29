@@ -90,13 +90,13 @@ export default function ProductDetailClient({
 
             {/* Thumbnail Navigation */}
             {product.images.length > 1 && (
-              <div className="grid grid-cols-4 gap-4">
+              <div className="flex gap-3 overflow-x-auto pb-2 scrollbar-none scroll-smooth">
                 {product.images.map((img, idx) => (
                   <button
                     key={idx}
                     type="button"
                     onClick={() => setActiveImageIndex(idx)}
-                    className={`relative aspect-square w-full overflow-hidden rounded-xl bg-foreground/5 transition-all duration-300 ${
+                    className={`relative aspect-square w-16 md:w-20 shrink-0 overflow-hidden rounded-xl bg-foreground/5 transition-all duration-300 ${
                       activeImageIndex === idx
                         ? "ring-2 ring-accent scale-[0.98]"
                         : "opacity-75 hover:opacity-100 hover:scale-[1.02]"
@@ -107,7 +107,7 @@ export default function ProductDetailClient({
                       alt={`${product.name} Thumbnail ${idx + 1}`}
                       fill
                       className="object-cover"
-                      sizes="15vw"
+                      sizes="(max-width: 768px) 64px, 80px"
                     />
                   </button>
                 ))}
