@@ -143,9 +143,6 @@ export default function ProductDetailClient({
               <span className="text-2xl font-bold tracking-tight text-foreground">
                 {product.priceLabel}
               </span>
-              <p className="mt-2 text-xs text-foreground/50 font-medium">
-                Distributor identification is attached in description code.
-              </p>
             </div>
 
             {/* Product description */}
