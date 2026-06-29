@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { whatsappNumber } from "@/lib/products";
 
 export default function Footer() {
   return (
@@ -50,7 +51,7 @@ export default function Footer() {
             </span>
             <div className="flex flex-col gap-2.5 text-[11px] uppercase tracking-[0.2em] text-[#faf8f2]/70">
               <a
-                href="https://wa.me/0000000000"
+                href={`https://wa.me/${whatsappNumber}`}
                 className="hover:text-[#faf8f2] transition-colors"
               >
                 WhatsApp Business
@@ -59,7 +60,7 @@ export default function Footer() {
                 support@chezmoi.com
               </span>
               <span className="text-[#faf8f2]/50 tracking-[0.2em]">
-                +00 000 000 0000
+                +91 96337 45832
               </span>
             </div>
           </div>

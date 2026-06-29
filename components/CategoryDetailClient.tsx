@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
 import { ArrowLeft } from "lucide-react";
-import { getOrderLink, Product } from "@/lib/products";
+import { getOrderLink, Product, whatsappNumber } from "@/lib/products";
 
 type CategoryDetailClientProps = {
   category: Product;
@@ -69,7 +69,7 @@ export default function CategoryDetailClient({ category }: CategoryDetailClientP
             className="mt-10 flex flex-wrap justify-center gap-4"
           >
             <a
-              href={`https://wa.me/0000000000?text=Hi!%20Notify%20me%20when%20the%20Chez%20Moi%20${encodeURIComponent(category.name)}%20collection%20launches.`}
+              href={`https://wa.me/${whatsappNumber}?text=Hi!%20Notify%20me%20when%20the%20Chez%20Moi%20${encodeURIComponent(category.name)}%20collection%20launches.`}
               className="rounded-full bg-foreground px-6 py-3 text-[11px] font-semibold uppercase tracking-[0.3em] !text-[#faf8f2] transition duration-200 hover:brightness-110"
             >
               Notify Me on WhatsApp

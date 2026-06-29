@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
+import { whatsappNumber } from "@/lib/products";
 
 const navLinks = [
   { label: "Home", href: "/#home", id: "home" },
@@ -112,7 +113,7 @@ export default function Header() {
           {/* Action Column */}
           <div className="justify-self-end flex items-center">
             <a
-              href="https://wa.me/0000000000"
+              href={`https://wa.me/${whatsappNumber}`}
               className="rounded-full border border-accent px-5 py-2 text-[11px] font-medium uppercase tracking-[0.28em] text-foreground transition-colors hover:bg-accent/10"
             >
               WhatsApp
@@ -174,7 +175,7 @@ export default function Header() {
                   ))}
                 </ul>
                 <a
-                  href="https://wa.me/0000000000"
+                  href={`https://wa.me/${whatsappNumber}`}
                   className="mt-6 inline-flex rounded-full border border-accent px-5 py-2 text-[11px] font-medium uppercase tracking-[0.28em] text-foreground transition-colors hover:bg-accent/10"
                 >
                   WhatsApp

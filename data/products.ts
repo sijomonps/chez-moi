@@ -22,7 +22,7 @@ export const products: Product[] = [
       "Easy-care, wrinkle-resistant finish",
     ],
     orderLink:
-      "https://wa.me/0000000000?text=I%20want%20to%20order%20Bedsheets",
+      "https://wa.me/919633745832?text=I%20want%20to%20order%20Bedsheets",
   },
   {
     slug: "curtains",
@@ -37,7 +37,7 @@ export const products: Product[] = [
       "Custom lengths available on request",
     ],
     orderLink:
-      "https://wa.me/0000000000?text=I%20want%20to%20order%20Curtains",
+      "https://wa.me/919633745832?text=I%20want%20to%20order%20Curtains",
   },
   {
     slug: "towels",
@@ -52,7 +52,7 @@ export const products: Product[] = [
       "Fade-resistant neutral dyes",
     ],
     orderLink:
-      "https://wa.me/0000000000?text=I%20want%20to%20order%20Towels",
+      "https://wa.me/919633745832?text=I%20want%20to%20order%20Towels",
   },
   {
     slug: "kitchen-linen",
@@ -67,6 +67,6 @@ export const products: Product[] = [
       "Neutral palette to mix and match",
     ],
     orderLink:
-      "https://wa.me/0000000000?text=I%20want%20to%20order%20Kitchen%20Linen",
+      "https://wa.me/919633745832?text=I%20want%20to%20order%20Kitchen%20Linen",
   },
 ];

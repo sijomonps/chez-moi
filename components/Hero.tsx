@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
+import { whatsappNumber } from "@/lib/products";
 
 const heroImage = "/images/landingpageimage.png";
 
@@ -39,7 +40,7 @@ export default function Hero() {
               View Collection
             </Link>
             <a
-              href="https://wa.me/0000000000"
+              href={`https://wa.me/${whatsappNumber}`}
               className="rounded-full border border-foreground/15 px-6 py-3 text-[11px] font-medium uppercase tracking-[0.3em] !text-foreground transition-colors hover:border-foreground/40 hover:text-foreground"
             >
               WhatsApp

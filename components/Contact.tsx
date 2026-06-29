@@ -2,6 +2,7 @@
 
 import { motion, useReducedMotion } from "framer-motion";
 import { MessageCircle } from "lucide-react";
+import { whatsappNumber } from "@/lib/products";
 
 export default function Contact() {
   const reduceMotion = useReducedMotion();
@@ -20,7 +21,7 @@ export default function Contact() {
           </h2>
           <div className="mt-8 flex flex-wrap items-center gap-4">
             <a
-              href="https://wa.me/0000000000"
+              href={`https://wa.me/${whatsappNumber}`}
               className="inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3 text-[11px] font-medium uppercase tracking-[0.3em] !text-[#faf8f2] transition-colors hover:bg-foreground/90"
             >
               <MessageCircle size={16} aria-hidden="true" />
@@ -28,7 +29,7 @@ export default function Contact() {
             </a>
           </div>
           <p className="mt-6 text-xs font-medium uppercase tracking-[0.35em] text-foreground/70">
-            +00 000 000 0000
+            +91 96337 45832
           </p>
         </motion.div>
       </div>
