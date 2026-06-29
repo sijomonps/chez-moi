@@ -49,18 +49,20 @@ export default function Collection({
               transition={{ duration: 0.5, ease: "easeOut" }}
               className="group"
             >
-              <div className="relative aspect-[3/4] w-full overflow-hidden rounded-2xl">
-                <Image
-                  src={item.image}
-                  alt={item.name}
-                  fill
-                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
-                  sizes="(max-width: 768px) 90vw, 25vw"
-                />
-              </div>
-              <h3 className="mt-4 text-sm font-medium uppercase tracking-[0.3em] text-foreground">
-                {item.name}
-              </h3>
+              <Link href={`/products/${item.slug}`} className="block group/link">
+                <div className="relative aspect-[3/4] w-full overflow-hidden rounded-2xl">
+                  <Image
+                    src={item.image}
+                    alt={item.name}
+                    fill
+                    className="object-cover transition-transform duration-700 ease-out group-hover/link:scale-[1.03]"
+                    sizes="(max-width: 768px) 90vw, 25vw"
+                  />
+                </div>
+                <h3 className="mt-4 text-sm font-medium uppercase tracking-[0.3em] text-foreground group-hover/link:text-accent transition-colors">
+                  {item.name}
+                </h3>
+              </Link>
               <p className="mt-2 text-sm text-foreground/70">
                 {item.summary}
               </p>
@@ -71,12 +73,6 @@ export default function Collection({
                 >
                   View
                 </Link>
-                <a
-                  href={getOrderLink(item.name)}
-                  className="rounded-full bg-foreground px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.28em] !text-[#faf8f2] transition-colors hover:bg-foreground/90"
-                >
-                  Order now
-                </a>
               </div>
             </motion.div>
           ))}

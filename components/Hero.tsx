@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
 
-const heroImage = "/images/linen-placeholder.svg";
+const heroImage = "/images/landingpageimage.png";
 
 export default function Hero() {
   const reduceMotion = useReducedMotion();

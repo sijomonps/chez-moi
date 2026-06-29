@@ -35,6 +35,6 @@ a {
   color: #faf8f2;
 }
 
-#home, #collection, #about, #gallery, #contact {
+#home, #collection, #about, #contact {
   scroll-margin-top: 100px;
 }

@@ -10,7 +10,6 @@ const navLinks = [
   { label: "Home", href: "/#home", id: "home" },
   { label: "Collection", href: "/#collection", id: "collection" },
   { label: "About", href: "/#about", id: "about" },
-  { label: "Gallery", href: "/#gallery", id: "gallery" },
 ];
 
 export default function Header() {
@@ -27,7 +26,8 @@ export default function Header() {
     // Only track scroll/observer when we are on the homepage
     if (pathname !== "/") return;
 
-    const sections = ["home", "collection", "about", "gallery"];
+    const sections = ["home", "collection", "about"];
+
     const observerOptions = {
       root: null,
       rootMargin: "-20% 0px -50% 0px", // Trigger when the section occupies the center of the viewport
